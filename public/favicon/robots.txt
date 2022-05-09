@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://p64-fitnessblog.netlify.app/api/my-sitemap
