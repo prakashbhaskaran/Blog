@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+import Script from "next/script";
 import longrun from "../data/longrun.json";
 export default function LongRun() {
   return (
@@ -42,15 +42,15 @@ export default function LongRun() {
           property="twitter:image"
           content="https://images.unsplash.com/photo-1645822937278-5e84025713f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         />
-        <script type="text/javascript" language="javascript">
+        <Script type="text/javascript" language="javascript">
           var aax_size='728x90'; var aax_pubname = 'longrun0b-21'; var
           aax_src='302';
-        </script>
-        <script
+        </Script>
+        <Script
           type="text/javascript"
           language="javascript"
           src="http://c.amazon-adsystem.com/aax2/assoc.js"
-        ></script>
+        ></Script>
       </Head>
 
       <main className="py-5 px-2">
