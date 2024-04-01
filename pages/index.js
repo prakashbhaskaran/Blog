@@ -9,10 +9,10 @@ export default function Home() {
       <main className="py-5">
         <h1 className="text-info">Fitness Blogs</h1>
         <div className="py-5">
-          <Link href="/long-run">
-            <a className="main-list fs-3 text-decoration-none text-light">
+          <Link style={{ textDecoration: "none" }} href="/long-run">
+            <span className="main-list fs-3 text-decoration-none text-light">
               10 Things I wish I knew before started long distance running.
-            </a>
+            </span>
           </Link>
         </div>
       </main>

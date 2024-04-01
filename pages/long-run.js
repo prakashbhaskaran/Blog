@@ -15,7 +15,7 @@ export default function LongRun() {
         {/*Open Graph/ Facebook*/}
         <meta property="og:site_name" content="Fitness Blog" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://p64-fitnessblog.netlify.app" />
+        <meta property="og:url" content="https://blog64.vercel.app" />
         <meta property="og:title" content="Long distance running" />
         <meta
           property="og:description"
