@@ -1,16 +1,3 @@
-.image-container {
-  height: 300px;
-}
-@media screen and (min-width: 425px) {
-  .image-container {
-    height: 450px;
-  }
-}
 body {
-  background-color: rgba(33, 37, 41, 1);
-}
-.main-list:hover {
-  color: springgreen !important;
-  padding-left: 10px;
-  transition: all 0.5s ease;
+  background-color: #111;
 }

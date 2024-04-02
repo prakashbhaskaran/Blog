@@ -1,10 +1,10 @@
-import "bootstrap/dist/css/bootstrap.css";
 import Head from "next/head";
 import "../styles/globals.css";
+import "../styles/app.css";
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <div className="bg-[#111] p-4">
+    <div className="p-4">
       <Head>
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <link

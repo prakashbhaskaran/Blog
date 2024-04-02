@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 export default function Home() {
   return (
-    <div className="vh-100">
+    <div>
       <Head>
         <title>Fitness Blog</title>
       </Head>
