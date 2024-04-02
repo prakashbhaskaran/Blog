@@ -1,8 +1,9 @@
 import Head from "next/head";
 import longrun from "../data/longrun.json";
+import Flex from "../components/Flex";
 export default function LongRun() {
   return (
-    <div className="container bg-dark">
+    <div>
       <Head>
         <title>Long Distance Running</title>
         <meta
@@ -43,12 +44,12 @@ export default function LongRun() {
         />
       </Head>
 
-      <main className="py-5 px-2">
-        <h1 className="text-center text-light">
+      <main>
+        <h1 className="text-center text-light text-[40px]">
           10 Things I wish I knew before started long distance running
         </h1>
-        <div className="d-flex flex-column align-items-center flex-lg-row mt-5 gap-4">
-          <div className="image-container w-100 w-lg-50">
+        <Flex style="flex-column justify-center align-items-center flex-lg-row mt-5 gap-4">
+          <div className="w-full xl:w-1/2">
             <img
               src="https://images.unsplash.com/photo-1610969524483-2898ee78a41d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
               alt="Long Running"
@@ -57,27 +58,13 @@ export default function LongRun() {
               style={{ objectFit: "cover" }}
             />
           </div>
-          <div className="w-100 w-lg-50">
-            <div className="d-flex flex-column align-items-center">
-              <h3 className="text-info">Key points:</h3>
-              <ol>
-                {longrun.map((item, index) => {
-                  return (
-                    <li className="fs-4 text-white" key={index}>
-                      {item.title}
-                    </li>
-                  );
-                })}
-              </ol>
-            </div>
-          </div>
-        </div>
+        </Flex>
         <div className="mt-5">
           {longrun.map((item, index) => {
             return (
               <div key={index} className="py-2">
-                <h2 className="text-info">{item.title}:</h2>
-                <p className="fs-4 text-white">{item.content}</p>
+                <h2 className="text-info text-[28px]">{item.title}:</h2>
+                <p className="text-[28px] text-white">{item.content}</p>
               </div>
             );
           })}
