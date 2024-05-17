@@ -1,4 +1,5 @@
 import React from "react";
+import Flex from "../components/Flex";
 
 const Custom404 = () => {
   return (
