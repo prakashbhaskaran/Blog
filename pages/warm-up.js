@@ -8,7 +8,7 @@ const warmUp = () => {
         <title>Warm up guidance</title>
       </Head>
       <main className="py-5 px-2">
-        <h1 className="text-center text-light">Warm up guidance</h1>
+        <h1 className="text-center text-white text-40">Warm up guidance</h1>
         <div className="d-flex flex-column align-items-center flex-lg-row mt-5 gap-4">
           <div className="image-container w-100 w-lg-50">
             <img
@@ -21,7 +21,6 @@ const warmUp = () => {
           </div>
           <div className="w-100 w-lg-50">
             <div className="d-flex flex-column align-items-center">
-              <h3 className="text-info">Key points:</h3>
               <ol className="mt-2">
                 {warmup.map((item, index) => {
                   return (
