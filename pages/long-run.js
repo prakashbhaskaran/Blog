@@ -2,6 +2,7 @@ import Head from "next/head";
 import longrun from "../data/longrun.json";
 import Flex from "../components/Flex";
 import Image from "next/image";
+import MasterTemplate from "../components/page-components/MasterTemplate";
 export default function LongRun() {
   return (
     <div>
@@ -45,30 +46,14 @@ export default function LongRun() {
         />
       </Head>
 
-      <main>
-        <h1 className="text-center text-white text-[40px]">
-          10 Things I wish I knew before started long distance running
-        </h1>
-        <Flex style={"justify-center mt-4"}>
-          <Image
-            src="https://images.unsplash.com/photo-1610969524483-2898ee78a41d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-            alt="Long Running"
-            height={500}
-            width={500}
-            style={{ objectFit: "cover" }}
-          />
-        </Flex>
-        <div className="mt-5">
-          {longrun.map((item, index) => {
-            return (
-              <div key={index} className="py-2">
-                <h2 className="text-sky-400/100 text-[28px]">{item.title}:</h2>
-                <p className="text-[28px] text-white">{item.content}</p>
-              </div>
-            );
-          })}
-        </div>
-      </main>
+      <MasterTemplate
+        title="10 Things I wish I knew before started long distance running"
+        list={longrun}
+        image={
+          "https://images.unsplash.com/photo-1610969524483-2898ee78a41d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+        }
+        imageAlt="Long Running"
+      />
     </div>
   );
 }

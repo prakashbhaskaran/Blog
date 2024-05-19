@@ -2,13 +2,21 @@ import Head from "next/head";
 import "../styles/globals.css";
 import "../styles/app.css";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { IoIosHome } from "react-icons/io";
+import { GiHamburgerMenu } from "react-icons/gi";
+import Box from "../components/Box";
+import { useState } from "react";
+import Flex from "../components/Flex";
+import SideNavBar from "../components/page-components/SideNavBar";
 
 export default function MyApp({ Component, pageProps }) {
-  const pathname = usePathname();
+  const [expand, setExpand] = useState(false);
+
+  const handleClick = () => {
+    setExpand(!expand);
+  };
   return (
-    <div className="p-4">
+    <Box>
       <Head>
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <link
@@ -30,14 +38,17 @@ export default function MyApp({ Component, pageProps }) {
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </Head>
-      {pathname !== "/" && (
-        <Link href={"/"} className="text-white text-2xl">
-          <IoIosHome />
-        </Link>
-      )}
-      <div className="mt-2">
-        <Component {...pageProps} />
-      </div>
-    </div>
+
+      <Flex>
+        <SideNavBar expand={expand} handleClick={handleClick} />
+        <Box
+          style={`pl-2 pt-2 transition-all ${
+            expand ? "basis-4/5" : "basis-full"
+          }`}
+        >
+          <Component {...pageProps} />
+        </Box>
+      </Flex>
+    </Box>
   );
 }

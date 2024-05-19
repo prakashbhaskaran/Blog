@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Fitness Blog</title>
+        <title>Fitness Blogs</title>
       </Head>
-      <h1 className="text-white uppercase text-40">Fitness Blog</h1>
+      <h1 className="text-white uppercase text-2xl">Fitness Blogs</h1>
       <main className="mt-2">
         <Flex style={"flex-col gap-4"}>
           {links.map((_) => {
