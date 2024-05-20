@@ -13,11 +13,12 @@ export default function Home() {
       <h1 className="text-white uppercase text-2xl">Fitness Blogs</h1>
       <main className="mt-2">
         <Flex style={"flex-col gap-4"}>
-          {links.map((_) => {
+          {links.map((_, index) => {
             return (
               <MasterCTA
                 title={_.title}
                 link={_.link}
+                key={index}
                 icon={
                   <div className="text-white text-40">
                     <GiFeather />

@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "next": "latest",
+    "nextjs-toploader": "^1.6.12",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^5.2.1",

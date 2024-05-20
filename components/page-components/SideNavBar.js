@@ -2,13 +2,12 @@ import React from "react";
 import Box from "../Box";
 import Flex from "../Flex";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoIosHome } from "react-icons/io";
 import { usePathname, useRouter } from "next/navigation";
+import links from "../../data/links.json";
 
 const SideNavBar = ({ expand, handleClick }) => {
   const router = useRouter();
   const path = usePathname();
-  console.log(path);
   return (
     <Box
       style={`h-[auto] min-h-screen bg-dark ${
@@ -28,20 +27,52 @@ const SideNavBar = ({ expand, handleClick }) => {
           expand ? "flex" : "hidden"
         } flex-col gap-3 sticky top-[30px] pt-4`}
       >
-        {[{ link: "/", icon: <IoIosHome /> }].map((_) => {
-          return (
-            <Flex
-              style={`bg-sky-400/100 p-2 cursor-pointer ${
-                path === _.link ? "opacity-100" : "opacity-75"
-              } hover:opacity-100 justify-center w-full text-white text-2xl`}
-              onClick={() => {
-                router.push(_.link);
-              }}
-            >
-              <IoIosHome />
-            </Flex>
-          );
-        })}
+        <div
+          className={`group flex flex-col gap-2 rounded-lg bg-black p-5 ${
+            path === "/" ? "text-sky-400" : "text-white"
+          }`}
+          tabindex="1"
+          onClick={() => {
+            router.push("/");
+          }}
+        >
+          <div class="flex cursor-pointer items-center justify-between">
+            <span> Home </span>
+          </div>
+        </div>
+        <div
+          class={`group flex flex-col gap-2 rounded-lg bg-black p-5 ${
+            links.map((_) => _.link).includes(path)
+              ? "text-sky-400"
+              : "text-white"
+          }`}
+          tabindex="1"
+        >
+          <div class="flex cursor-pointer items-center justify-between">
+            <span> Blogs </span>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+              class="h-2 w-3 transition-all duration-500 group-focus:-rotate-180"
+            />
+          </div>
+          <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+            {links.map((_, index) => {
+              return (
+                <Box
+                  style={`${
+                    path === _.link ? "text-sky-400" : "text-white"
+                  } cursor-pointer hover:text-sky-400/50`}
+                  onClick={() => {
+                    router.push(_.link);
+                  }}
+                  key={index}
+                >
+                  {_.title}
+                </Box>
+              );
+            })}
+          </div>
+        </div>
       </Flex>
     </Box>
   );

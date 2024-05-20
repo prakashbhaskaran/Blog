@@ -1,9 +1,7 @@
 import Head from "next/head";
 import "../styles/globals.css";
 import "../styles/app.css";
-import Link from "next/link";
-import { IoIosHome } from "react-icons/io";
-import { GiHamburgerMenu } from "react-icons/gi";
+import NextTopLoader from "nextjs-toploader";
 import Box from "../components/Box";
 import { useState } from "react";
 import Flex from "../components/Flex";
@@ -38,7 +36,7 @@ export default function MyApp({ Component, pageProps }) {
         />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </Head>
-
+      <NextTopLoader showSpinner={false} easing="ease" />
       <Flex>
         <SideNavBar expand={expand} handleClick={handleClick} />
         <Box
